@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('path/to/Roboto-Regular.woff2') format('woff2'),
+         url('path/to/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.shadow{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+@media (width >= 48rem) {
+    .navbar{
+        display: block;
+    }
+      }
+ :root {
+        /* Breakpoint Definitions */
+        --mobile: 30rem;     /* 480px */
+        --tablet: 48rem;     /* 768px */
+        --desktop: 64rem;    /* 1024px */
+        --large-desktop: 80rem; /* 1280px */
+}

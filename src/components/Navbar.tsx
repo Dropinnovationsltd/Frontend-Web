@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import VehicleDropdown from './vehicleDropdown';
+import VehicleDropdown from './VehicleDropdown';
 import CarRentDropdown from './CarRentDropDown';
-
 
 import {
   HomeIcon,
@@ -20,9 +19,7 @@ import {
   ArrowTrendingDownIcon
 } from '@heroicons/react/24/outline';
 
-
-
-const Navbar = ({ onNavbarToggle }) => {
+const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void }) => {
 
   interface NavDropdownProps {
     onClose?: () => void;
@@ -73,29 +70,22 @@ const Navbar = ({ onNavbarToggle }) => {
   const toggleNavbar = useCallback(() => {
     const newOpenState = !isOpen;
     setIsOpen(newOpenState);
-    // Optional: Callback to parent component if needed
     onNavbarToggle && onNavbarToggle(newOpenState);
   }, [isOpen, onNavbarToggle]);
-
-
-  
-
-
 
   return (
     <>
       {/* Mobile Menu Button */}
       <span
         onClick={toggleNavbar} 
-        className=" z-50 md:hidden bg-[#96842c]"
+        className=" z-50 bg-[#96842c]"
       >
-        {isOpen ? <XMarkIcon className="w-[40px] h-[40px] hidden border-none bg-[fff]" /> : <Bars3Icon className=" text-[#808080] w-[40px] h-[40px] bg-[#96842c] border-none shadow-none" />}
+        {isOpen ? <XMarkIcon className="w-[40px] h-[40px] hidden border-none bg-[fff]" /> : <Bars3Icon className=" text-[#fff] w-[40px] h-[40px] bg-[#96842c] border-none shadow-none" />}
       </span>
 
       {/* Navbar */}
       <nav 
-        className={`
-          fixed top-[0px] left-[0px] h-full bg-white shadow-lg 
+        className={`fixed navbar md:block top-[0px] left-[0px] h-full bg-white shadow-lg 
           transform transition-all duration-300 ease-in-out
           w-[65vw] max-w-[300px] z-40
           ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}
@@ -110,7 +100,7 @@ const Navbar = ({ onNavbarToggle }) => {
                          onClick={toggleNavbar}/>
           </div>
           
-          <div className="space-y-2">
+          <div className="space-y-[px]">
             {navItems.map((item) => {
               if (item.component) {
                 const Component = item.component;
@@ -125,14 +115,13 @@ const Navbar = ({ onNavbarToggle }) => {
                   key={item.path}
                   to={item.path}
                   onClick={toggleNavbar}
-                  className={`
-                    flex items-center cursor-pointer mx-[1px] my-[8px] p-[8px] rounded-[8px] transition-colors duration-200
+                  className={`flex items-center cursor-pointer mx-[1px] my-[8px] p-[8px] rounded-[8px] transition-colors duration-200
                     ${isActive 
                       ? 'bg-[#96842c] text-[#fff] no-underline' 
                       : ' text-[#96842c] no-underline'}
                   `}
                 >
-                  <Icon className="w-[24px] text-[18px] h-[24px] mr-[1.5rem]" />
+                  <Icon className="w-[24px] text-[18px] h-[24px] mr-[0.5rem]" />
                   <span className="text-[16px] font-[500]">{item.name}</span>
                 </Link>
               );
@@ -144,7 +133,7 @@ const Navbar = ({ onNavbarToggle }) => {
       {isOpen && (
         <div 
           onClick={toggleNavbar} 
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          className="fixed inset-0 bg-black/50 z-30"
           aria-hidden="true"
         />
       )}
@@ -153,6 +142,3 @@ const Navbar = ({ onNavbarToggle }) => {
 };
 
 export default Navbar;
-
-
-

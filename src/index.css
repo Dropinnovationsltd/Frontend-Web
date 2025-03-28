@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('path/to/Roboto-Regular.woff2') format('woff2'),
+         url('path/to/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.shadow{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    
+}

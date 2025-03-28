@@ -61,7 +61,7 @@ const Header = () => {
       {isDropdownOpen && (
         <div
          ref={dropdownRef}
-         className="absolute z-10 w-full left-[0px] bg-[#f5f5f5] rounded-[8px] shadow-[8px] mt-[50px] overflow-hidden">
+         className="absolute z-10 w-full left-[0px] bg-[#fff] rounded-[8px] shadow-[8px] mt-[50px] overflow-hidden">
           <Link
             to="/settings" 
             className="block px-[16px] no-underline text-[#1f1f1f] hover:bg-[#719ef2] transition duration-200"

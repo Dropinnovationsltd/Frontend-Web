@@ -1,9 +1,7 @@
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
-import Navbar from './components/Navbar'
 import Users from './pages/Users'
 import Drivers from './pages/Drivers'
 import Vehicle from './pages/Vehicle'
@@ -29,7 +27,7 @@ const App = () => {
   <Router>
        <Header />
      <div className='flex'>
-        <main className="flex-grow md:ml-[65vw] md:max-w-[300px] p-6">
+        <main className="flex-grow md:ml-[65vw] md:max-w-[300px] md:p-[40px] font-roboto md:px-[100px]">
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />

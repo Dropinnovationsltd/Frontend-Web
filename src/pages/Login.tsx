@@ -116,14 +116,14 @@ const Login = () => {
     return (
         <div className='h-screen font-roboto'>
             <div className='flex flex-col'>
-                <div className='p-[30px] m-[50px] flex justify-center align-center'>
+                <div className='p-[30px] md:p[40px] m-[50px] md:m-[100px] flex justify-center align-center'>
                     <div>
-                        <img src={drop} className='h-[50px] w-[100px]' alt="Drop Logo" />
+                        <img src={drop} className='h-[50px] w-[100px] md:h-[100px] md:w-[200px]' alt="Drop Logo" />
                     </div>
                 </div>
-                <div className='rounded-[12px] p-[10px] mt-[10px]'>
-                    <div className='text-[16px] py-[10px]'>
-                        <h2 className='text-[#808080] text-[24px] font-[300]'>Welcome to the Drop App</h2>
+                <div className='rounded-[12px] md:rounded-[16px] p-[10px] md:p-[16px] mt-[10px] md:mt-[25px]'>
+                    <div className='text-[16px] md:text-[20px] py-[10px] md:py-[20px]'>
+                        <h2 className='text-[#808080] text-[24px] md:text-[30px] font-[300]'>Welcome to the Drop App</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="mb-4 pr-[14px]">
                                 <label htmlFor='email' className='block text-[#808080] text-[18px] font-bold py-[7px]'>

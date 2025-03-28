@@ -47,7 +47,7 @@ import Footer from "../components/Footer";
 
 function Dashboard() {
   return (
-    <div className="p-[8px] h-screen bg-[#f4efeff8]">
+    <div className="p-[8px] md:p-[20px] h-screen bg-[#fff]">
       <DashboardOverview />
       
     </div>

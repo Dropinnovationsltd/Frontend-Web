@@ -49,7 +49,7 @@ const VehicleDropdown: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
           ${isOpen ? 'bg-[#96842c] text-[#fff]' : 'text-[#96842c]'}
         `}
       >
-        <TruckIcon className="w-[24px] text-[18px] h-[24px] mr-[1.5rem]" />
+        <TruckIcon className="w-[24px] text-[18px] h-[24px] mr-[0.5rem]" />
         <span className="text-[16px] font-[500] flex-grow">Vehicle</span>
         {isOpen ? (
           <ChevronUpIcon className="w-[20px] h-[20px]" />
@@ -79,7 +79,7 @@ const VehicleDropdown: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
                     : 'text-[#96842c] no-underline'}
                 `}
               >
-                <Bars2Icon className="w-[24px] text-[18px] h-[24px] mr-[1.5rem]"/>
+                <Bars2Icon className="w-[18px] text-[16px] h-[13px] mr-[0.5rem]"/>
                 <span className="text-[16px] font-[500]">{item.name}</span>
               </Link>
             );

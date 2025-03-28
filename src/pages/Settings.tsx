@@ -1,5 +1,5 @@
 import { UserIcon, PauseCircleIcon } from '@heroicons/react/24/outline'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { EyeIcon, EyeSlashIcon, CameraIcon, ArrowUpLeftIcon } from '@heroicons/react/24/outline';
 
 
