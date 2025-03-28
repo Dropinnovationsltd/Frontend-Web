@@ -1,36 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import drop from '../assets/image-4.png'
+import drop from '../assets/image-4.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-interface UserData {
-    email: string;
-    password: string;
-    rememberMe: boolean;
-}
-
-interface Errors {
-    email: string;
-    password: string;
-    general?: string;
-}
-
 const Login = () => {
     const navigate = useNavigate();
-    const [userData, setUserData] = useState<UserData>({
+    const [userData, setUserData] = useState({
         email: '',
         password: '',
         rememberMe: false
     });
-    const [errors, setErrors] = useState<Errors>({
+    const [errors, setErrors] = useState({
         email: '',
         password: ''
     });
     const [loading, setLoading] = useState(false);
 
     // Validation function
-    const validateForm = (): boolean => {
-        const newErrors: Errors = { email: '', password: '' };
+    const validateForm = () => {
+        const newErrors = { email: '', password: '' };
         let isValid = true;
 
         // Email validation
@@ -56,7 +44,7 @@ const Login = () => {
     };
 
     // Handle input changes
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setUserData(prev => ({
             ...prev,
@@ -73,7 +61,7 @@ const Login = () => {
     };
 
     // Handle form submission
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
         // Validate form before submission
@@ -94,7 +82,7 @@ const Login = () => {
                 if (response.status === 200) {
                     navigate('/dashboard');
                 }
-            } catch (error: any) {
+            } catch (error) {
                 if (error.response) {
                     setErrors(prev => ({
                         ...prev,

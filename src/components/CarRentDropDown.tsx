@@ -72,13 +72,13 @@ const CarRentDropdown: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
                   setIsOpen(false);
                 }}
                 className={`
-                  block cursor-pointer mx-[1px] my-[6px] p-[8px] rounded-[8px] transition-colors duration-200
+                  block cursor-pointer mx-[1px] my-[6px] p-[8px] flex rounded-[8px] transition-colors duration-200
                   ${isActive 
                     ? 'bg-[#96842c] text-[#fff] no-underline' 
                     : 'text-[#96842c] no-underline'}
                 `}
               >
-                <Bars2Icon className="w-[18px] text-[16px] h-[13px] mr-[0.5rem]"/>
+                <Bars2Icon className="w-[18px] text-[16px] h-[18px] mt-[3px] mr-[0.5rem]"/>
                 <span className="text-[16px] font-[500]">{item.name}</span>
               </Link>
             );

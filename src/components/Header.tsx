@@ -1,6 +1,7 @@
+import React from 'react'
 import  { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Profile from '../assets/image-4.png'
+import Profile from '../assets/driver/driver107.png'
 import { DeviceTabletIcon, PowerIcon } from '@heroicons/react/24/solid'
 import Navbar from './Navbar'
 
@@ -68,15 +69,15 @@ const handleClickOutside = (event: MouseEvent) => {
       {isDropdownOpen && (
         <div
          ref={dropdownRef}
-         className="absolute z-10 w-full left-[0px] bg-[#fff] rounded-[8px] shadow-[8px] mt-[50px] overflow-hidden">
+         className="absolute z-10 w-full left-[0px] bg-[#fff] rounded-[8px] shadow mt-[50px] overflow-hidden">
           <Link
             to="/settings" 
-            className="block px-[16px] no-underline text-[#1f1f1f] hover:bg-[#719ef2] transition duration-200"
+            className="block py-1 px-[16px] no-underline text-[#1f1f1f] hover:bg-[#719ef2] transition duration-200"
           >
-            <div className='flex align-center'>
+            <div className='flex flex-row'>
            
             <p className='no-underline text-[18px] px-[4px] text-[#808080]'>
-            <DeviceTabletIcon className='w-[20px] h-[20px] px-[4px]'/>
+            
               Settings
             </p>
             </div>
@@ -85,10 +86,10 @@ const handleClickOutside = (event: MouseEvent) => {
             to="/" 
             className="block px-[16px] no-underline text-[#1f1f1f] hover:bg-[#719ef2] transition duration-200"
           >
-            <div className='flex align-center'>
+            <div className='flex py-1 align-center'>
            
             <p className='no-underline text-[18px] px-[4px] text-[#808080]'>
-            <PowerIcon className='w-[20px] h-[20px] px-[4px]'/>
+            
               Logout
             </p>
             </div>
