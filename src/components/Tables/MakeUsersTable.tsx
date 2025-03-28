@@ -32,7 +32,7 @@ const generateMockUsers = (count: number): User[] => {
   }));
 };
   // Generate 10,000 mock users
-  const allUsers = useMemo(() => generateMockUsers(1000), []);
+  const allUsers = useMemo(() => generateMockUsers(50), []);
   const [searchTerm, setSearchTerm] = useState('');
   const usersPerPage = 10;
 
