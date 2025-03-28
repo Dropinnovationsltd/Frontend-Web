@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import  { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Profile from '../assets/driver/driver24.svg'
 import { DeviceTabletIcon, PowerIcon } from '@heroicons/react/24/solid'
@@ -7,10 +7,12 @@ import Navbar from './Navbar'
 const Header = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const profileImageRef = useRef(null);
+const dropdownRef = useRef<HTMLDivElement>(null);
+const profileImageRef = useRef<HTMLImageElement>(null);
 
-  const handleNavbarToggle = (openState) => {
+
+const handleNavbarToggle = (openState: boolean) => {
+
     setIsNavbarOpen(openState);
   };
   
@@ -19,14 +21,18 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+const handleClickOutside = (event: MouseEvent) => {
+
+
+
       // Check if the click is outside both the dropdown and the profile image
       if (
         dropdownRef.current && 
-        !dropdownRef.current.contains(event.target) &&
+        !dropdownRef.current.contains(event.target as Node) &&
         profileImageRef.current && 
-        !profileImageRef.current.contains(event.target)
+        !profileImageRef.current.contains(event.target as Node)
       ) {
+
         setIsDropdownOpen(false);
       }
     };
@@ -48,7 +54,8 @@ const Header = () => {
       <div className='flex justify-between py-[12px] px-[24px] bg-[#96842c] rounded-[8px]'>
       <div className='md:hidden bg-[#96842c]'>
         <div>
-           <Navbar />
+           <Navbar onNavbarToggle={handleNavbarToggle} />
+
         </div>
       </div>
         <img

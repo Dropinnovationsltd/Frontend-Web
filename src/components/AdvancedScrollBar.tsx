@@ -1,4 +1,12 @@
-const VerticalScrollContainer = ({ children, maxHeight = 'max-h-96', className = '' }) => {
+import React, { FC } from 'react';
+
+
+interface VerticalScrollContainerProps {
+  children: React.ReactNode;
+  maxHeight?: string;
+  className?: string;
+}
+const VerticalScrollContainer: FC<VerticalScrollContainerProps> = ({ children, maxHeight = 'max-h-96', className = '' }) => {
     return (
       <div 
         className={`

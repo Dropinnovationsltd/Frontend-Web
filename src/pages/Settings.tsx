@@ -6,30 +6,40 @@ import { EyeIcon, EyeSlashIcon, CameraIcon, ArrowUpLeftIcon } from '@heroicons/r
 
 const Settings = () => {
 
-    const [previewImage, setPreviewImage] = useState(null)
-    const [activeTab, setActiveTab] = useState(null);
-    const [passwordVisibility, setPasswordVisibility] = useState({
+const [previewImage, setPreviewImage] = useState<string | null>(null)
+const [activeTab, setActiveTab] = useState<string | null>(null);
+const [passwordVisibility, setPasswordVisibility] = useState<{
+    currentPassword: boolean;
+    newPassword: boolean;
+    confirmPassword: boolean;
+}>({
+
         currentPassword: false,
         newPassword: false,
         confirmPassword: false
       });
-      const togglePasswordVisibility = (field) => {
+      const togglePasswordVisibility = (field: keyof typeof passwordVisibility) => {
+
         setPasswordVisibility(prev => ({
           ...prev,
           [field]: !prev[field]
         }));
       };
 
-      const handleImageUpload = (event) => {
-        const file = event.target.files[0]
+      const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+
         if (file) {
           const reader = new FileReader()
           reader.onloadend = () => {
-            setPreviewImage(reader.result)
+            if (typeof reader.result === 'string') {
+                setPreviewImage(reader.result);
+
           }
           reader.readAsDataURL(file)
         }
       }
+    }
 
   return (
     <div className='container mx-auto p-[8px]'>
@@ -223,7 +233,6 @@ const Settings = () => {
                 placeholder="New password" 
               />
               <span
-                  type="button"
                   className="absolute right-[50px] mt-[140px] bg-transparent top-1/2 transform -translate-y-1/2"
                   onClick={() => togglePasswordVisibility('confirmPassword')}
                 >
@@ -245,4 +254,4 @@ const Settings = () => {
   )
 }
 
-export default Settings
+export default Settings;

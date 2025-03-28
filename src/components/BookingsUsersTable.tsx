@@ -1,17 +1,30 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 
 
 
 const BookingsUsersTable = () => {
 
+
+  interface User {
+    id: number;
+    name: string; // This should be a string, but it is used as an image source
+    email: string;
+    number: string;
+    phoneNumber: string;
+    profilePic: string;
+    status: string;
+  }
     // Generate mock data
-const generateMockUsers = (count) => {
-  return Array.from({ length: count }, (_, index) => ({
+const generateMockUsers = (count: number): User[] => {
+
+  return Array.from({ length: count }, (_, index): User => ({
+
     id: index + 1,
-    name: '',
+    name: `User ${index + 1}`,
+
     email: `user${index + 1}@example.com`,
     number: `${String(index + 1).padStart(4, '0')}`,   
     phoneNumber: `+1 (${Math.floor(Math.random() * 900 + 100)}) ${Math.floor(Math.random() * 900 + 100)}-${Math.floor(Math.random() * 9000 + 1000)}`,
@@ -20,7 +33,8 @@ const generateMockUsers = (count) => {
   }));
 };
   // Generate 10,000 mock users
-  const allUsers = useMemo(() => generateMockUsers(10000), []);
+const allUsers = useMemo(() => generateMockUsers(10000), [] as User[]);
+
   const [searchTerm, setSearchTerm] = useState('');
   const usersPerPage = 10;
 
@@ -91,7 +105,7 @@ const generateMockUsers = (count) => {
           {/* Clear Search Button */}
           {searchTerm && (
             <button 
-              onClick={clearSearch}
+              
               className="absolute right-[12px] top-1/2 -translate-y-1/2"
             >
               <XMarkIcon className="h-[20px] w-[20px] text-[#b4b4b4] hover:text-[#585858]" />
@@ -136,8 +150,9 @@ const generateMockUsers = (count) => {
                 
                 <td className="p-[16px]">
                   <img 
-                    src={user.name} 
-                    alt={""}
+                    src={user.profilePic} 
+                    alt={`Profile of ${user.email}`}
+
                     className="h-[40px] w-[40px] rounded-[9999px] object-cover"
                   />
                 </td>

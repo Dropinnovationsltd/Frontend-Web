@@ -1,4 +1,4 @@
-import React from 'react'
+
 import VerticalScrollContainer from '../../components/AdvancedScrollBar'
 import FeatureUsersTable from '../../components/Tables/FeatureUsersTable'
 

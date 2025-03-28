@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import VehicleDropdown from './VehicleDropdown';
 import CarRentDropdown from './CarRentDropDown';
@@ -7,16 +7,11 @@ import {
   HomeIcon,
   UsersIcon,
   TruckIcon,
-  ClockIcon,
   ClipboardDocumentListIcon,
-  BookmarkIcon,
   CreditCardIcon,
   DocumentIcon,
   XMarkIcon,
-  Bars3Icon,
-  Bars2Icon,
-  ArrowTrendingUpIcon,
-  ArrowTrendingDownIcon
+  Bars3Icon
 } from '@heroicons/react/24/outline';
 
 const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void }) => {
@@ -104,7 +99,8 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
             {navItems.map((item) => {
               if (item.component) {
                 const Component = item.component;
-                return <Component key="vehicle-dropdown" onClose={toggleNavbar} />;
+                return <Component key={`dropdown-${item.path}`} onClose={toggleNavbar} />;
+
               }
 
               const Icon = item.icon;

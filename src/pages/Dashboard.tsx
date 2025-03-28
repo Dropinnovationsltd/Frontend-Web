@@ -37,13 +37,8 @@ const Dashboard = () => {
 }
 
 export default Dashboard*/}
-import Header from "../components/Header";
+
 import DashboardOverview from "../components/DashboardOverview";
-import BookingActivity from "../components/BookingActivity";
-import FleetManagement from "../components/FleetManagement";
-import TopEarningVehicles from "../components/TopEarningVehicles";
-import Reviews from "../components/Reviews";
-import Footer from "../components/Footer";
 
 function Dashboard() {
   return (

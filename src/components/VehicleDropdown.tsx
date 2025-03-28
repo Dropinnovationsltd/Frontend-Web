@@ -35,7 +35,10 @@ const VehicleDropdown: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
   };
 
   const handleItemClick = (path: string) => {
-    onClose && onClose();
+    if (typeof onClose === 'function') {
+        onClose();
+    }
+
     // You can add additional logic here if needed
   };
 

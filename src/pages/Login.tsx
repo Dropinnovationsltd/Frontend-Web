@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import drop from '../assets/drop logo 1.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+interface UserData {
+    email: string;
+    password: string;
+    rememberMe: boolean;
+}
+
+interface Errors {
+    email: string;
+    password: string;
+    general?: string;
+}
 
 const Login = () => {
     const navigate = useNavigate();
-    const [userData, setUserData] = useState({
+    const [userData, setUserData] = useState<UserData>({
         email: '',
         password: '',
         rememberMe: false
     });
-    const [errors, setErrors] = useState({
+    const [errors, setErrors] = useState<Errors>({
         email: '',
         password: ''
     });
     const [loading, setLoading] = useState(false);
 
     // Validation function
-    const validateForm = () => {
-        const newErrors = { email: '', password: '' };
+    const validateForm = (): boolean => {
+        const newErrors: Errors = { email: '', password: '' };
         let isValid = true;
 
         // Email validation
@@ -44,7 +56,7 @@ const Login = () => {
     };
 
     // Handle input changes
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         setUserData(prev => ({
             ...prev,
@@ -61,7 +73,7 @@ const Login = () => {
     };
 
     // Handle form submission
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         // Validate form before submission
@@ -82,7 +94,7 @@ const Login = () => {
                 if (response.status === 200) {
                     navigate('/dashboard');
                 }
-            } catch (error) {
+            } catch (error: any) {
                 if (error.response) {
                     setErrors(prev => ({
                         ...prev,
@@ -135,15 +147,7 @@ const Login = () => {
                                     name='email'
                                     value={userData.email}
                                     onChange={handleChange}
-                                    className={`
-                                        text-[#808080] text-[14px] 
-                                        appearance-none border-2 
-                                        p-[10px] rounded-[8px] w-full 
-                                        focus:outline-none focus:bg-[#ffffff] 
-                                        ${errors.email 
-                                            ? 'border-red-500' 
-                                            : 'border-[#ebc1c1]'}
-                                    `}
+                                    className={`text-[#808080] text-[14px] appearance-none border-2 p-[10px] rounded-[8px] w-full focus:outline-none focus:bg-[#ffffff] ${errors.email ? 'border-red-500' : 'border-[#ebc1c1]'}`}
                                     placeholder='Enter your email'
                                     aria-label="Email"
                                 />
@@ -163,15 +167,7 @@ const Login = () => {
                                     name='password'
                                     value={userData.password}
                                     onChange={handleChange}
-                                    className={`
-                                        text-[#808080] text-[14px] 
-                                        appearance-none border-2 
-                                        p-[10px] rounded-[8px] w-full 
-                                        focus:outline-none focus:bg-[#ffffff] 
-                                        ${errors.password 
-                                            ? 'border-red-500' 
-                                            : 'border-[#ebc1c1]'}
-                                    `}
+                                    className={`text-[#808080] text-[14px] appearance-none border-2 p-[10px] rounded-[8px] w-full focus:outline-none focus:bg-[#ffffff] ${errors.password ? 'border-red-500' : 'border-[#ebc1c1]'}`}
                                     placeholder='Enter your password'
                                     aria-label="Password"
                                 />
@@ -206,18 +202,7 @@ const Login = () => {
                             
                             <button 
                                 type='submit' 
-                                className='
-                                    w-full font-[1000] bg-[#96842c] 
-                                    py-[10px] px-[16px] 
-                                    hover:bg-[#718f49] 
-                                    my-[20px] text-[16px] 
-                                    text-[#ffffff] rounded-[8px] 
-                                    text-center 
-                                    focus:outline-none 
-                                    focus:shadow-outline
-                                    disabled:opacity-50
-                                    disabled:cursor-not-allowed
-                                '
+                                className='w-full font-[1000] bg-[#96842c] py-[10px] px-[16px] hover:bg-[#718f49] my-[20px] text-[16px] text-[#ffffff] rounded-[8px] text-center focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed'
                                 disabled={loading}
                             >
                                 {loading ? 'Signing In...' : 'Sign In'}

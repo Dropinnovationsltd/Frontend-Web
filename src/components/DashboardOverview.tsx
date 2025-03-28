@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Bars4Icon } from "@heroicons/react/24/solid";
-import Card from "./Card";
-import { UserIcon, UserCircleIcon, TruckIcon, UserGroupIcon,  } from "@heroicons/react/24/outline";
+import { UserIcon, UserCircleIcon, TruckIcon, } from "@heroicons/react/24/outline";
 
 function DashboardOverview() {
   return (

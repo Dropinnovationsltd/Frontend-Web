@@ -1,4 +1,4 @@
-import React from 'react'
+
 import VerticalScrollContainer from '../../components/AdvancedScrollBar'
 import MakeUsersTable from '../../components/Tables/MakeUsersTable'
 
