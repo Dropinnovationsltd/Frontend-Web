@@ -1,5 +1,5 @@
-import React from 'react'
-import DriverUserTable from '../components/DriverUsertable';
+
+import DriverUserTable from '../components/DriverUserTable';
 import VerticalScrollContainer from '../components/AdvancedScrollBar';
 const Drivers = () => {
   return (

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import WithdrawUserTable from '../components/WithdrawUserTable';
 import VerticalScrollContainer from '../components/AdvancedScrollBar';
 const WithdrawalRequest = () => {

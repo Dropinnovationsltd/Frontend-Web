@@ -1,22 +1,33 @@
-import React, { useState, useMemo } from 'react';
+import  { useState, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 
 
 const WithdrawUserTable = () => {
 
+
+  interface User {
+    id: number;
+    name: string; // This should be a string, but it is used as an image source
+    email: string;
+    number: string;
+    phoneNumber: string;
+    profilePic: string;
+    status: string;
+  }
     // Generate mock data
-const generateMockUsers = (count) => {
-  return Array.from({ length: count }, (_, index) => ({
+const generateMockUsers = (count: number): User[] => {
+
+  return Array.from({ length: count }, (_, index): User => ({
+
     id: index + 1,
-    name: '',
+    name: `User ${index + 1}`,
     email: `user${index + 1}@example.com`,
     number: `${String(index + 1).padStart(4, '0')}`,   
     phoneNumber: `+1 (${Math.floor(Math.random() * 900 + 100)}) ${Math.floor(Math.random() * 900 + 100)}-${Math.floor(Math.random() * 9000 + 1000)}`,
-    amount: `+1 ($Math.floor(Math.random() * (20000 - 1000 + 1)) + 1000;)`,
     profilePic: `https://api.dicebear.com/8.x/avataaars/svg?seed=${index}`,
-    status: Math.random() > 0.3 ? 'Approved' : 'Pending' , 'Hold' : 'Rejected'
+    status: Math.random() > 0.3 ? 'Approved' : 'Pending'
   }));
 };
   // Generate 10,000 mock users
@@ -91,7 +102,6 @@ const generateMockUsers = (count) => {
           {/* Clear Search Button */}
           {searchTerm && (
             <button 
-              onClick={clearSearch}
               className="absolute right-[12px] top-1/2 -translate-y-1/2"
             >
               <XMarkIcon className="h-[20px] w-[20px] text-[#b4b4b4] hover:text-[#585858]" />

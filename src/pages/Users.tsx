@@ -1,8 +1,8 @@
-import React from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+
+
 import UsersTable from '../components/UserTable';
 import VerticalScrollContainer from '../components/AdvancedScrollBar';
-import Footer from '../components/Footer';
+
 
 
 
