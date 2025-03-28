@@ -1,6 +1,6 @@
 import  { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Profile from '../assets/driver/driver24.svg'
+import Profile from '../assets/image-4.png'
 import { DeviceTabletIcon, PowerIcon } from '@heroicons/react/24/solid'
 import Navbar from './Navbar'
 
