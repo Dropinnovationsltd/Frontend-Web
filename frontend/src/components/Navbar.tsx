@@ -74,17 +74,17 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
       {/* Mobile Menu Button */}
       <span
         onClick={toggleNavbar} 
-        className=" z-50 bg-[#96842c]"
+        className=" z-50 md:hidden bg-[#96842c]"
       >
         {isOpen ? <XMarkIcon className="w-[40px] h-[40px] hidden border-none bg-[fff]" /> : <Bars3Icon className=" text-[#fff] w-[40px] h-[40px] bg-[#96842c] border-none shadow-none" />}
       </span>
 
       {/* Navbar */}
       <nav 
-        className={`fixed navbar md:block top-[0px] left-[0px] h-full bg-white shadow-lg 
+        className={`fixed md:relative navbar md:block top-[0px] left-[0px] h-full bg-white shadow-lg 
           transform transition-all duration-300 ease-in-out
           w-[65vw] max-w-[300px] z-40
-          ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}
+          ${isOpen ? 'translate-x-0 opacity-100 md:opacity-0' : '-translate-x-full opacity-0 md:opacity-0'}
           md:translate-x-0 md:opacity-100
         `}
         aria-hidden={!isOpen}
@@ -92,7 +92,7 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
         <div className="p-[24px] bg-[#fff] h-screen">
           <div className='flex justify-between items-center'>
              <h2 className="text-[28px] font-[1000] mb-[20px] px-[25px] text-[#96842c] text-center">Drop</h2>
-             <XMarkIcon className='w-[30px] h-[30px] border-none bg-none text-[#96842c] p-[6px]' 
+             <XMarkIcon className='w-[30px] h-[30px] border-none md:hidden bg-none text-[#96842c] p-[6px]' 
                          onClick={toggleNavbar}/>
           </div>
           
@@ -130,7 +130,7 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
       {isOpen && (
         <div 
           onClick={toggleNavbar} 
-          className="fixed inset-0 bg-black/50 z-30"
+          className="fixed md:relative inset-0 bg-black/50 md:bg-none z-30"
           aria-hidden="true"
         />
       )}

@@ -3,7 +3,7 @@ import DashboardOverview from "../components/DashboardOverview";
 
 function Dashboard() {
   return (
-    <div className="p-[8px] md:p-[20px] h-screen bg-[#fff]">
+    <div className="p-[8px] md:mx-auto md:py-10  h-screen bg-[#fff]">
       <DashboardOverview />
       
     </div>

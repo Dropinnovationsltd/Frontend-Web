@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/outline';
@@ -118,11 +119,11 @@ const generateMockUsers = (count: number): User[] => {
         )}
       </div>
       {/* Horizontal Scrollable Table Container */}
-      <div className="w-full overflow-x-auto  rounded-[14px] shadow-[1px]">
+      <div className="w-full overflow-x-auto h-screen  rounded-[14px] shadow-[1px]">
         <div>
           
         </div>
-        <table className="w-full min-w-[800px] border-collapse border-spacing-0">
+        <table className="w-full h-screen min-w-[800px] border-collapse border-spacing-0">
           {/* Table Header */}
           <thead className="bg-[#ede9e9]">
             <tr>

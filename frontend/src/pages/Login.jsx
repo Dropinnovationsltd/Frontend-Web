@@ -114,9 +114,9 @@ const Login = () => {
     }, []);
 
     return (
-        <div className='h-screen font-roboto'>
-            <div className='flex flex-col'>
-                <div className='p-[30px] md:p[40px] m-[50px] md:m-[100px] flex justify-center align-center'>
+        <div className='h-screen font-roboto md:mx-auto md:min-w-full md:px-10'>
+            <div className=''>
+                <div className='p-[30px] md:p[40px] m-[50px] md:m-[50px] flex justify-center items-center'>
                     <div>
                         <img src={drop} className='h-[50px] w-[100px] md:h-[100px] md:w-[200px]' alt="Drop Logo" />
                     </div>

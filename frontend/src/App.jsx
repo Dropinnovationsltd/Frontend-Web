@@ -19,15 +19,21 @@ import VehicleType from './pages/Vehicle/VehicleType'
 import Color from './pages/Vehicle/Color'
 import CarRentVehicleType from './pages/CarRent/CarRentVehicleType'
 import Feature from './pages/CarRent/Feature'
+import Navbar from './components/Navbar'
 
 const App = () => {
  
   return (
-    <div className='font-roboto p-2'>
+    <div className='font-roboto'>
       <Router>
-           <Header />
-         <div className='flex'>
-            <main className="flex-grow md:ml-[65vw] md:max-w-[300px] h-screen md:p-[40px] font-roboto md:px-[100px]">
+      <Header /> 
+        <div className='max-w-screen flex'>
+        <div className='w-1/5 hidden md:block'>
+        <Navbar />
+        </div >
+           <div className='w-4/5'>
+                 
+            <main className="h-screen font-roboto md:px-20">
               <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -45,11 +51,10 @@ const App = () => {
                 <Route path="/withdrawal-request" element={<WithdrawalRequest />} />
                 <Route path="/cms" element={<Cms />} />
                 <Route path="/settings" element={<Settings />} />
-              </Routes>
-              
+              </Routes>            
             </main>
-           
-          </div>
+           </div>
+        </div>
         </Router>
         <div className="">
             <Footer />

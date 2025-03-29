@@ -1,3 +1,4 @@
+import React from 'react';
 import { UserIcon, PauseCircleIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { EyeIcon, EyeSlashIcon, CameraIcon, ArrowUpLeftIcon } from '@heroicons/react/24/outline';
@@ -58,7 +59,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
               : 'bg-[#fff] text-[#808080]'
           }`}>
                 <UserIcon className='h-[30px] p-[8px] w-[30px]'/>
-                <p className='text-[16px] px-[8px] font-[300]'>
+                <p className='text-[16px] py-2 px-[8px] font-[300]'>
                     General
                 </p>
             </div>
@@ -71,7 +72,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
               : 'bg-[#fff] text-[#808080]'
           }`}>
                 <PauseCircleIcon className='h-[30px] p-[8px] w-[30px]'/>
-                <p className='text-[16px] px-[8px] font-[300]'>
+                <p className='text-[16px] py-2 px-[8px] font-[300]'>
                     Change Password
                 </p>
             </div>
