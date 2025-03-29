@@ -114,7 +114,7 @@ const Login = () => {
     }, []);
 
     return (
-        <div className='h-screen font-roboto md:mx-auto md:min-w-full md:px-10'>
+        <div className='h-screen font-roboto mx-auto w-full md:px-10'>
             <div className=''>
                 <div className='p-[30px] md:p[40px] m-[50px] md:m-[50px] flex justify-center items-center'>
                     <div>

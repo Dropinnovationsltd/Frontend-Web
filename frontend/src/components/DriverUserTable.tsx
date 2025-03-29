@@ -1,3 +1,4 @@
+import React from 'react';
 import  { useState, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/outline';
@@ -81,7 +82,7 @@ const generateMockUsers = (count: number): User[] => {
      
        <div className="mb-[16px] relative">
         <div className="flex justify-center ">
-          <p className='px-[6px] text-[16px] font-[400] text-[#808080]'>
+          <p className='px-[6px]  text-[16px] py-2 font-[400] text-[#808080]'>
             Search :
           </p>
           <input 

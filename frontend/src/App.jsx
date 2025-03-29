@@ -24,16 +24,16 @@ import Navbar from './components/Navbar'
 const App = () => {
  
   return (
-    <div className='font-roboto'>
+    <div className='font-roboto mx-auto'>
       <Router>
       <Header /> 
         <div className='max-w-screen flex'>
-        <div className='w-1/5 hidden md:block'>
+        <div className=' hidden md:block'>
         <Navbar />
         </div >
-           <div className='w-4/5'>
+           <div className='w-full'>
                  
-            <main className="h-screen font-roboto md:px-20">
+            <main className="h-screen font-roboto mx-auto px-2 md:px-20">
               <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -56,9 +56,8 @@ const App = () => {
            </div>
         </div>
         </Router>
-        <div className="">
             <Footer />
-         </div>
+         
       </div>
   )
 }

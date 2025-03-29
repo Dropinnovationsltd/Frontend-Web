@@ -52,27 +52,27 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
         <div className='bg-[#f5f5f5] mb-[30px] rounded-[10px]'>
             <div onClick={() => setActiveTab('general')} 
             className={`
-                cursor-pointer p-[px] flex rounded-[10px] 
+                cursor-pointer flex rounded-[10px] px-2
             ${
             activeTab === 'general' 
               ? 'bg-[#96842c] text-[#fff]' 
               : 'bg-[#fff] text-[#808080]'
           }`}>
-                <UserIcon className='h-[30px] p-[8px] w-[30px]'/>
-                <p className='text-[16px] py-2 px-[8px] font-[300]'>
+                <UserIcon className='h-7 md:h-8 md:w-8 md:pt-3 pt-2 w-7'/>
+                <p className='text-[16px] py-2 md:text-lg px-[8px] font-[300]'>
                     General
                 </p>
             </div>
             <div onClick={() => setActiveTab('password')} 
             className={`
-                cursor-pointer p-[px] flex rounded-[10px] 
+                cursor-pointer p-[px] flex rounded-[10px] px-2
             ${
             activeTab === 'password' 
               ? 'bg-[#96842c] text-[#fff]' 
               : 'bg-[#fff] text-[#808080]'
           }`}>
-                <PauseCircleIcon className='h-[30px] p-[8px] w-[30px]'/>
-                <p className='text-[16px] py-2 px-[8px] font-[300]'>
+                <PauseCircleIcon className='h-7 md:h-8 md:w-8 md:pt-3 pt-2 w-7'/>
+                <p className='text-[16px] py-2 md:text-lg px-[8px] font-[300]'>
                     Change Password
                 </p>
             </div>
@@ -83,7 +83,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
         <div className="bg-[#fff] mt-[90px] py-[16px] px-[20px] shadow rounded-[7px]">
           <div className="space-y-4 p-[px]">
          <div className='flex '>
-         <div className="w-[80px] h-[80px] rounded-[16px] bg-[#f5f5f5] flex items-center justify-center overflow-hidden">
+         <div className="w-22 h-22 rounded-[16px] bg-[#f5f5f5] flex items-center justify-center overflow-hidden">
         {previewImage ? (
           <img 
             src={previewImage} 
@@ -99,8 +99,8 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
       <div className="flex flex-col space-y-2">
         <label 
           htmlFor="profile-pic-upload" 
-          className="cursor-pointer inline-flex items-center  px-[16px] py-[8px] 
-                     bg-[#96842c] text-[#fff] rounded-[14px] 
+          className="cursor-pointer inline-flex items-center px-[16px] py-[8px] 
+                     bg-[#96842c] m-6 text-[#fff] rounded-[14px] 
                      hover:bg-[#6d6120] transition-colors"
         >
           <ArrowUpLeftIcon className="mr-[8px] h-[20px] w-[20px]" />
@@ -114,7 +114,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
           />
         </label>
         <p className="text-[14px] text-[#808080] font-[300]">
-          JPG or PNG. Max size 5MB.
+         
         </p>
       </div>
          </div>
@@ -125,7 +125,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         Name
                     </label>
                     <input type="text"
-                    className='w-[90%] p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
+                    className='w-full p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
                     placeholder="Admins"  />
                 </div>
                 <div className='flex flex-col py-[8px]'>
@@ -134,7 +134,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         E-mail
                        </label>
                     <input type="email"
-                    className='w-[90%] p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
+                    className='w-full p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
                     placeholder="admin@taxi.com"  />
                 </div>
                 <div className='flex flex-col py-[8px]'>
@@ -143,7 +143,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         Country Code
                     </label>
                     <input type="text"
-                    className='w-[90%] p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
+                    className='w-full p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
                     placeholder="Country Code"  />
                 </div>
                 <div className='flex flex-col py-[8px]'>
@@ -152,7 +152,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         Emergency Phone Number
                     </label>
                     <input type="phone"
-                    className='w-[90%] p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
+                    className='w-full p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
                     placeholder="Phone Number"  />
                 </div>
                 <div className='flex flex-col py-[8px]'>
@@ -161,7 +161,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         Commission(%)
                     </label>
                     <input type="text"
-                    className='w-[90%] p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
+                    className='w-full p-[8px] text-[#808080] bg-[#f5f5f5] font-[300] border rounded-[8px]'
                     placeholder="Commission"  />
                 </div>
                 <div className='flex flex-col py-[8px]'>
@@ -173,7 +173,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                         Toggle for live mode. Leave unchecked for the test mode
                     </p>
                 </div>
-                <button className="my-[10px] bg-[#96842c] text-[#fff] p-[8px] rounded-[8px]">
+                <button className="my-[10px] bg-[#96842c] text-[#fff] p-[8px] cursor-pointer rounded-[8px]">
               Save Changes
             </button>         
           </div>
@@ -186,14 +186,14 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
           <div className="space-y-4">
             <div>
               <label className="block my-[8px] text-[#808080] font-[300]">Old Password</label>
-             <div className='flex items-center'>
+             <div className='flex justify-center items-center'>
              <input 
                 type={passwordVisibility.currentPassword ? "text" : "password"}  
-                className="w-[90%] p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
+                className="w-full p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
                 placeholder="Old password" 
               />
               <span  
-                  className="absolute right-[50px] mt-[8px] bg-transparent top-1/2 transform -translate-y-1/2"
+                  className="absolute right-10 md:right-30"
                   onClick={() => togglePasswordVisibility('currentPassword')}
                 >
                   {passwordVisibility.currentPassword ? (
@@ -204,17 +204,17 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                 </span>
              </div>
             </div>
-            <div>
+            <div className=''>
               <label className="block my-[8px] text-[#808080] font-[300]">New Password</label>
-              <div>
+              <div className='flex justify-center items-center'>
               <input 
                 type={passwordVisibility.newPassword ? "text" : "password"} 
-                className="w-[90%] p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
+                className="w-full p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
                 placeholder="New password" 
               />
               <span
                   
-                  className="absolute right-[50px] mt-[70px] bg-transparent top-1/2 transform -translate-y-1/2"
+                  className="absolute right-10 md:right-30"
                   onClick={() => togglePasswordVisibility('newPassword')}
                 >
                   {passwordVisibility.newPassword ? (
@@ -227,14 +227,14 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
             </div>
             <div>
               <label className="block my-[8px] text-[#808080] font-[300]">Retype New Password</label>
-             <div>
+             <div className='flex justify-center items-center'>
              <input 
                 type={passwordVisibility.confirmPassword ? "text" : "password"} 
-                className="w-[90%] p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
+                className="w-full p-[8px] text-[#808080] font-[300] border rounded-[8px]" 
                 placeholder="New password" 
               />
               <span
-                  className="absolute right-[50px] mt-[140px] bg-transparent top-1/2 transform -translate-y-1/2"
+                  className="absolute right-10 md:right-30"
                   onClick={() => togglePasswordVisibility('confirmPassword')}
                 >
                   {passwordVisibility.confirmPassword ? (
@@ -245,7 +245,7 @@ const [passwordVisibility, setPasswordVisibility] = useState<{
                 </span>
              </div>
             </div>
-            <button className="my-[10px] bg-[#96842c] text-[#fff] p-[8px] rounded-[8px]">
+            <button className="my-[10px] bg-[#96842c] text-[#fff] p-[8px] cursor-pointer rounded-[8px]">
               Save Changes
             </button>
           </div>

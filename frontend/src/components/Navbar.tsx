@@ -76,12 +76,13 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
         onClick={toggleNavbar} 
         className=" z-50 md:hidden bg-[#96842c]"
       >
-        {isOpen ? <XMarkIcon className="w-[40px] h-[40px] hidden border-none bg-[fff]" /> : <Bars3Icon className=" text-[#fff] w-[40px] h-[40px] bg-[#96842c] border-none shadow-none" />}
+        {isOpen ? <XMarkIcon className="w-[40px] h-[40px] hidden border-none bg-[fff]" />
+         : <Bars3Icon className=" text-[#fff] w-[40px] h-[40px] bg-[#96842c] border-none shadow-none" />}
       </span>
 
       {/* Navbar */}
       <nav 
-        className={`fixed md:relative navbar md:block top-[0px] left-[0px] h-full bg-white shadow-lg 
+        className={`fixed md:relative navbar md:block top-[0px] left-[0px] h-full bg-white shadow 
           transform transition-all duration-300 ease-in-out
           w-[65vw] max-w-[300px] z-40
           ${isOpen ? 'translate-x-0 opacity-100 md:opacity-0' : '-translate-x-full opacity-0 md:opacity-0'}
@@ -91,7 +92,7 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
       >
         <div className="p-[24px] bg-[#fff] h-screen">
           <div className='flex justify-between items-center'>
-             <h2 className="text-[28px] font-[1000] mb-[20px] px-[25px] text-[#96842c] text-center">Drop</h2>
+             <h2 className="text-3xl md:text-4xl font-bold mb-[20px] px-[25px] text-[#96842c] text-center">Drop</h2>
              <XMarkIcon className='w-[30px] h-[30px] border-none md:hidden bg-none text-[#96842c] p-[6px]' 
                          onClick={toggleNavbar}/>
           </div>
@@ -118,8 +119,8 @@ const Navbar = ({ onNavbarToggle }: { onNavbarToggle: (isOpen: boolean) => void 
                       : ' text-[#96842c] no-underline'}
                   `}
                 >
-                  <Icon className="w-[24px] text-[18px] h-[24px] mr-[0.5rem]" />
-                  <span className="text-[16px] font-[500]">{item.name}</span>
+                  <Icon className="w-6 h-6 md:w-7 md:h-7 md:mr-2.5 mr-[0.5rem]" />
+                  <span className="text-[16px] md:text-lg font-light">{item.name}</span>
                 </Link>
               );
             })}
