@@ -1,0 +1,8 @@
+version: 1
+services:
+  - type: web
+    name: drop
+    env: static
+    buildCommand: npm run build
+    startCommand: npm run start
+    staticPublishPath: dist
